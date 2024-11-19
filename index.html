@@ -1,5 +1,432 @@
+<!-- Disable CTRL U and Right Click -->
 <script>
-<!--
-document.write(unescape("%3C%21--%20Disable%20CTRL%20U%20and%20Right%20Click%20--%3E%0A%3Cscript%3E%0A%20%20document.onkeydown%20%3D%20function%28e%29%20%7B%0A%20%20%20%20if%20%28e.ctrlKey%20%26%26%20e.keyCode%20%3D%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%7D%0A%20%20%7D%3B%0A%3C/script%3E%0A%3Cbody%20oncontextmenu%3D%22return%20false%3B%22%3E%3C/body%3E%0A%0A%3C%21--%20disable%20CTRL%20U%20and%20Right%20Click%20--%3E%0A%0A%3C%21doctype%20html%3E%0A%0A%3Chtml%20lang%3D%22en%22%3E%0A%20%20%20%20%20%20%20%20%3Chead%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3CSCRIPT%20language%3DJavaScript%3E%0A%0A%3C%21--%20http%3A//www.spacegun.co.uk%20--%3E%0A%0Avar%20message%20%3D%20%22error%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0Afunction%20rtclickcheck%28keyp%29%7B%20if%20%28navigator.appName%20%3D%3D%20%22Netscape%22%20%26%26%20keyp.which%20%3D%3D%203%29%7B%20alert%28message%29%3B%20return%20false%3B%20%7D%0A%0Aif%20%28navigator.appVersion.indexOf%28%22MSIE%22%29%20%21%3D%20-1%20%26%26%20event.button%20%3D%3D%202%29%20%7B%20alert%28message%29%3B%20return%20false%3B%20%7D%20%7D%0A%0Adocument.onmousedown%20%3D%20rtclickcheck%3B%0A%0A%3Cscript%20type%3D%22text/javascript%22%3E%0A%20%20%20%20function%20mousehandler%28e%29%20%7B%0A%20%20%20%20%20%20%20%20var%20myevent%20%3D%20%28isNS%29%20%3F%20e%20%3A%20event%3B%0A%20%20%20%20%20%20%20%20var%20eventbutton%20%3D%20%28isNS%29%20%3F%20myevent.which%20%3A%20myevent.button%3B%0A%20%20%20%20%20%20%20%20if%20%28%28eventbutton%20%3D%3D%202%29%20%7C%7C%20%28eventbutton%20%3D%3D%203%29%29%20return%20false%3B%0A%20%20%20%20%7D%0A%20%20%20%20document.oncontextmenu%20%3D%20mischandler%3B%0A%20%20%20%20document.onmousedown%20%3D%20mousehandler%3B%0A%20%20%20%20document.onmouseup%20%3D%20mousehandler%3B%0A%20%20%20%20function%20disableCtrlKeyCombination%28e%29%20%7B%0A%20%20%20%20%20%20%20%20var%20forbiddenKeys%20%3D%20new%20Array%28%22a%22%2C%20%22s%22%2C%20%22c%22%2C%20%22x%22%2C%22u%22%29%3B%0A%20%20%20%20%20%20%20%20var%20key%3B%0A%20%20%20%20%20%20%20%20var%20isCtrl%3B%0A%20%20%20%20%20%20%20%20if%20%28window.event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20key%20%3D%20window.event.keyCode%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20//IE%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28window.event.ctrlKey%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isCtrl%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20else%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isCtrl%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20key%20%3D%20e.which%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20//firefox%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28e.ctrlKey%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isCtrl%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20else%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20isCtrl%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20if%20%28isCtrl%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20%28i%20%3D%200%3B%20i%20%3C%20forbiddenKeys.length%3B%20i++%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//case-insensitive%20comparation%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28forbiddenKeys%5Bi%5D.toLowerCase%28%29%20%3D%3D%20String.fromCharCode%28key%29.toLowerCase%28%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20return%20true%3B%0A%20%20%20%20%7D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%0A%3C/SCRIPT%3E%0A%20%20%20%20%20%20%20%20%0A%3Cmeta%20http-equiv%3D%22X-UA-Compatible%22%20content%3D%22IE%3Dedge%22%3E%0A%3C%21--%20Required%20meta%20tags%20--%3E%0A%20%20%20%20%20%20%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%20%20%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1%3A1%22%3E%0A%0A%20%20%20%20%20%20%20%20%3C%21--%20Bootstrap%20CSS%20--%3E%0A%20%20%20%20%20%20%20%20%3Clink%20href%3D%22https%3A//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css%22%20rel%3D%22stylesheet%22%20integrity%3D%22sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC%22%20crossorigin%3D%22anonymous%22%3E%0A%20%20%20%20%20%20%20%20%3Clink%20href%3D%22img/receptionist.jpg%22%20rel%3D%22icon%22%20type%3D%22image/png%22%3E%0A%20%20%20%20%20%20%20%20%3Clink%20href%3D%22img/receptionist.jpg%22%20rel%3D%22shortcut%20icon%22%20type%3D%22img/x-icon%22%3E%0A%20%20%20%20%20%20%20%20%3Clink%20href%3D%22style.css%22%20rel%3D%22stylesheet%22%20type%3D%22text/css%22%3E%0A%0A%20%20%20%20%20%20%20%20%3Ctitle%3EKernshomebuilders%20%7C%20interview%20form%26%2365533%3B%3C/title%3E%0A%20%20%20%20%3C/head%3E%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%3Cbody%3E%3Cp%20align%3D%22center%22%3E%3Cbody%20oncontextmenu%3D%22return%20false%22%3E%0A%3Cbr%3E%3Cimg%20width%3D%22384%22%20height%3D%22128%22%20class%3D%22fusion-standard-logo%22%20style%3D%22height%3A%20auto%3B%20max-height%3A%20128px%3B%22%20alt%3D%22Kerns%20Homebuilders%20Logo%22%20src%3D%22https%3A//kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png%22%20srcset%3D%22https%3A//kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png%201x%2C%20%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3B%26%2310%3Bhttps%3A//kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png%202x%22%20%0Adata-retina_logo_url%3D%22https%3A//kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png%22%3E%3Cbr%3E%3Cbr%3E%3Cbr%3E%3C/p%3E%3Ch5%20align%3D%22center%22%3EINTERVIEW%20APPLICATION%20FORM.%3C/h5%3E%3Cp%20align%3D%22center%22%3E%3Cbr%3E%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%20style%3D%22text-align%3A%20center%3B%20color%3A%20orange%3B%22%3EDear%20Applicant%2C%0A%0A%20%20%20%20%20%20%20%20%20%20We%20would%20like%20to%20confirm%20that%20we%20have%20received%20and%20reviewed%20your%20resume.%20You%20have%20been%20shortlisted%20as%20a%20potential%20candidate%20for%20the%20position%20of%20%22Office%20Receptionist/Data%20Entry/Personal%20Assistant%22%20that%20you%20applied%20for.%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%20style%3D%22text-align%3A%20center%3B%20color%3A%20orange%3B%22%3EYou%20are%20advised%20to%20read%20the%20interview%20questions%20carefully%20and%20take%20time%20to%20learn%20more%20about%20the%20company.%20Once%20we%20have%20received%20your%20responses%2C%20you%20will%20be%20given%20the%20opportunity%20to%20ask%20any%20questions.%20Please%20provide%20detailed%20and%20direct%20answers%20to%20maximize%20your%20chances%20of%20securing%20the%20position.%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22alert%20alert-danger%22%20role%3D%22alert%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ch1%20align%3D%22justify%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cstrong%3EPay%20And%20Work%20Schedule%3C/strong%3E%3Chr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20style%3D%22font-size%3A%2018px%3B%22%3EThis%20is%20a%20remote%20position%20with%20flexible%20working%20hours.%20You%20can%20choose%20to%20work%20from%20anywhere%2C%20but%20you%20are%20required%20to%20report%20online%20by%208%20AM%20%28your%20local%20timezone%29%20daily%20to%20begin%20duties%2C%20tasks%2C%20and%20assignments%20once%20work%20from%20home%20commences.%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20The%20pay%20rate%20is%20%2428.75%20per%20hour%20during%20working%20hours%20and%20%2424.75%20per%20hour%20during%20training%20hours.%0A%3C/span%3E%20%20%20%20%20%20%20%20%20%20%20%20%3C/h1%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20You%20will%20undergo%20a%20week%20of%20training%20and%20orientation%2C%20which%20will%20begin%20as%20soon%20as%20you%20have%20received%20all%20necessary%20work%20materials.%20Rest%20assured%2C%20you%20will%20be%20compensated%20for%20this%20training%20period.%0A%20%20%20%20%20%20%20%20%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20You%20will%20need%20to%20install%20certain%20accounting%20software%20programs%20and%20a%20time%20tracker%20to%20begin%20your%20training%20and%20orientation.%20These%20tools%20are%20essential%20for%20starting%20work%20promptly.%0A%20%20%20%20%20%20%20%20%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cstrong%3ENote%3A%3C/strong%3E%20The%20time%20tracker%20will%20monitor%20your%20working%20hours%20from%20the%20company%27s%20server%20for%20payroll%20purposes%2C%20as%20this%20is%20an%20online%2C%20remote%20position.%0A%20%20%20%20%20%20%20%20%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20The%20software%20programs%20required%20for%20your%20role%20include%3A%0A%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%3Cli%3EPeachtree%20Complete%20Accounting%20Software%3C/li%3E%3C/p%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%3C/p%3E%3Cli%3ECYMA%20IV%20Accounting%20Software%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%3C/p%3E%3Cli%3EMYOB%20Business%20Essentials%20Accounting%20Software%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%3C/p%3E%3Cli%3EQuickBooks%20Pro%20Accounting%20Software%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cp%3E%3C/p%3E%3Cli%3EA%20Time%20Tracker%3C/li%3E%0A%20%20%20%20%20%20%20%20%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%3E%0A%20%20%20%20%20%20%20%20%20%20Are%20you%20familiar%20with%20any%20of%20the%20above%20software%20programs%3F%20If%20not%2C%20don%27t%20worry%u2014our%20supervisors%20will%20provide%20the%20necessary%20guidance%2C%20and%20your%20training%20and%20orientation%20will%20proceed%20smoothly%2C%20as%20long%20as%20you%20are%20willing%20to%20learn.%0A%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%26nbsp%3B%3Cbr%3E%3Cbr%3E%3Cspan%20style%3D%22font-size%3A%2018.6px%3B%22%3E%3Cstrong%3E%3Cfont%20color%3D%22%23cb343b%22%3ENote%3A%20Abbreviations%20are%20not%20permitted%20during%20the%20interview%20session.%20Please%20remember%20that%20the%20sooner%20we%20receive%20your%20responses%20to%20the%20interview%20questions%2C%20the%20higher%20your%20chances%20of%20securing%20this%20job.%3C/font%3E%3C/strong%3E%3C/span%3E%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%3Ch2%20align%3D%22center%22%3EYou%20are%20being%20interviewed%20for%20the%20open%26nbsp%3Bpositions.%20Good%20luck%21%3C/h2%3E%3Chr%3E%0A%0A%20%20%20%20%20%20%20%20%3C%21--%3Cdiv%20class%3D%22row%20myformrow%22%3E--%3E%0A%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cform%20class%3D%22well%20form-horizontal%22%20action%3D%22https%3A//formsubmit.co/frankknnaa@usa.com%22%20method%3D%22post%22%20%20id%3D%22contact_form%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cfieldset%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Form%20Name%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clegend%3E%3C/legend%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EFirst%20Name%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-user%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20%20name%3D%22first_name%22%20placeholder%3D%22First%20Name%22%20class%3D%22form-control%22%20%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%20%3ELast%20Name%3C/label%3E%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-user%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22last_name%22%20placeholder%3D%22Last%20Name%22%20class%3D%22form-control%22%20%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EAddress%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-home%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22address%22%20placeholder%3D%22Address%22%20class%3D%22form-control%22%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3ECity%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-home%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22city%22%20placeholder%3D%22city%22%20class%3D%22form-control%22%20%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Select%20Basic%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EState%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20selectContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-list%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cselect%20name%3D%22state%22%20class%3D%22form-control%20selectpicker%22%20%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20value%3D%22%20%22%20%3EPlease%20select%20your%20state%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EAlabama%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EAlaska%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EArizona%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EArkansas%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3ECalifornia%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EColorado%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EConnecticut%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EDelaware%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EDistrict%20of%20Columbia%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3E%20Florida%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EGeorgia%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EHawaii%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3Edaho%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EIllinois%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EIndiana%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EIowa%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3E%20Kansas%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EKentucky%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3ELouisiana%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EMaine%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EMaryland%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3E%20Mass%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EMichigan%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EMinnesota%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EMississippi%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EMissouri%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EMontana%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENebraska%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENevada%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENew%20Hampshire%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENew%20Jersey%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENew%20Mexico%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENew%20York%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENorth%20Carolina%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ENorth%20Dakota%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EOhio%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EOklahoma%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EOregon%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EPennsylvania%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ERhode%20Island%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ESouth%20Carolina%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ESouth%20Dakota%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ETennessee%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3ETexas%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3E%20Uttah%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EVermont%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EVirginia%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EWashington%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EWest%20Virginia%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%3EWisconsin%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Coption%20%3EWyoming%3C/option%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/select%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EZIP%20Code%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-home%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22zip%22%20placeholder%3D%22ZIP%20Code%22%20class%3D%22form-control%22%20%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EPrimary%20phone%20number%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-earphone%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22phone%22%20placeholder%3D%22%28845%29555-1212%22%20class%3D%22form-control%22%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20input--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EEmail%20address%3C/label%3E%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-envelope%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20name%3D%22email%22%20placeholder%3D%22Email%20address%22%20class%3D%22form-control%22%20%20type%3D%22text%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22well%22%3E%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EDate%20of%20Birth%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22date%22%20class%3D%22form-control%22%20id%3D%22exampleInputDOB1%22%20placeholder%3D%22Date%20of%20Birth%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22well%22%3E%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20radio%20checks%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EAre%20you%20a%20U.S.%20citizen%3F%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22radio%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22radio%22%20name%3D%22Are%20you%20a%20U.S.%20citizen%3F%22%20value%3D%22yes%22%20/%3E%20Yes%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22radio%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22radio%22%20name%3D%22Are%20you%20a%20U.S.%20citizen%3F%22%20value%3D%22no%22%20/%3E%20No%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%21--%20Text%20area%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3EHow%20did%20you%20hear%20about%20us%3F%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%20inputGroupContainer%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22input-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22input-group-addon%22%3E%3Ci%20class%3D%22glyphicon%20glyphicon-pencil%22%3E%3C/i%3E%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20class%3D%22form-control%22%20name%3D%22How%20did%20you%20hear%20about%20us%3F%22%20placeholder%3D%22How%20did%20you%20hear%20about%20us%3F%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3E%3Cbr%3E%3Cbr%3E%3Cbr%3EFirst%20set%20of%20questions%3C/h3%3E%3Cbr%3E%3C/form%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Col%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3EWhat%20does%20a%20company%20owe%20to%20its%20employees%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20does%20a%20company%20owe%20to%20its%20employees%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqone%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EIf%20asked%2C%20can%20you%20provide%20three%20professional%20references%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22If%20asked%2C%20can%20you%20provide%20three%20professional%20references%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwo%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EHow%20many%20hours%20do%20you%20intend%20to%20dedicate%20to%20this%20position%20if%20hired%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22How%20many%20hours%20do%20you%20intend%20to%20dedicate%20to%20this%20position%20if%20hired%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqthree%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20is%20your%20typing%20speed%20%28WPM%29%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20is%20your%20typing%20speed%20%28WPM%29%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqfour%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20do%20you%20understand%20by%20the%20terms%20%27Privacy%27%20and%20%27Code%20of%20Conduct%27%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20do%20you%20understand%20by%20the%20terms%20%27Privacy%27%20and%20%27Code%20of%20Conduct%27%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqfive%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20do%20you%20understand%20by%20disbursement%20and%20reimbursement%20of%20funds%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20do%20you%20understand%20by%20disbunrsement%20and%20reimbursement%20of%20funds%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqsix%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EHow%20much%20training%20do%20you%20think%20you%20would%20need%20to%20become%20a%20productive%20employee%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22How%20much%20training%20do%20you%20think%20you%20would%20need%20to%20become%20a%20productive%20employee%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqseven%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EOn%20a%20scale%20of%20%25100%20how%20much%20can%20this%20company%20depend%20on%20you%20for%20your%20loyalty%2C%20diligence%2C%20hard%20work%2C%20team%20spirit%2C%20and%20sincerity%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22On%20a%20scale%20of%20%25100%20how%20much%20can%20this%20company%20depend%20on%20you%20for%20your%20loyalty%2C%20diligence%2C%20hard%20work%2C%20team%20spirit%2C%20and%20sincerity%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqeight%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ol%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3E%3Cbr%3E%3Cbr%3ESecond%20set%20of%20questions%3C/h3%3E%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Col%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3EWhat%20are%20your%20long-term%20career%20goals%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20are%20your%20long-term%20career%20goals%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqnine%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3ETell%20me%20about%20a%20time%20when%20you%20made%20a%20mistake%20at%20work%20and%20how%20it%20was%20resolved.%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Tell%20me%20about%20a%20time%20when%20you%20made%20a%20mistake%20at%20work%20and%20how%20it%20was%20resolved.%22%20class%3D%22form-control%22%20id%3D%22textareaqten%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3ECan%20you%20work%20under%20stress%20and%20pressure%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Can%20you%20work%20under%20stress%20and%20pressure%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqeleven%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EDo%20you%20currently%20hold%20any%20position%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Do%20you%20currently%20hold%20any%20position%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwelve%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EDo%20you%20have%20experience%20using%20MS%20Excel%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Do%20you%20have%20experience%20using%20MS%20Excel%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqthirteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EDo%20you%20have%20a%20printer%2C%20scanner%2C%20photocopier%2C%20and%20fax%20machine%3F%20Are%20you%20familiar%20with%20how%20to%20use%20them%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Do%20you%20have%20a%20printer%2C%20scanner%2C%20photocopier%2C%20and%20fax%20machine%3F%20Are%20you%20familiar%20with%20how%20to%20use%20them%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqfourteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20is%20your%20greatest%20achievement%20so%20far%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20is%20your%20greatest%20achievement%20so%20far%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqfifteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EHow%20would%20you%20describe%20yourself%20professionally%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22How%20would%20you%20describe%20yourself%20professionally%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqsixteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ol%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch3%3E%3Cbr%3E%3Cbr%3EHere%20are%20your%20final%20set%20of%20questions%3A%3C/h3%3E%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Col%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%3EAre%20you%20seeking%20a%20part-time%20or%20full-time%20job%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Are%20you%20seeking%20a%20part-time%20or%20full-time%20job%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqseventeen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EGive%20three%20specific%20and%20genuine%20reasons%20why%20you%20should%20be%20hired%20by%20the%20company.%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Give%20three%20specific%20and%20genuine%20reasons%20why%20you%20should%20be%20hired%20by%20the%20company.%22%20class%3D%22form-control%22%20id%3D%22textareaqeighteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20is%20your%20highest%20level%20of%20education%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20is%20your%20highest%20level%20of%20education%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqnineteen%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EHave%20you%20ever%20worked%20remotely%20or%20held%20a%20remote%20position%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Have%20you%20ever%20worked%20remotely%20or%20held%20a%20remote%20position%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwenty%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EIf%20you%20are%20hired%20by%20the%20company%2C%20how%20would%20you%20like%20to%20be%20paid%3A%20credit%20card%20or%20direct%20deposit%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22If%20you%20are%20hired%20by%20the%20company%2C%20how%20would%20you%20like%20to%20be%20paid%3A%20credit%20card%20or%20direct%20deposit%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwenty-one%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20is%20the%20name%20of%20the%20bank%20you%20operate%20with%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20is%20the%20name%20of%20the%20bank%20you%20operate%20with%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwenty-two%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EDo%20you%20have%20a%20credit%20card%20debt%20to%20pay%20off%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22Do%20you%20have%20a%20credit%20card%20debt%20to%20pay%20off%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwenty-three%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbr%3E%3Cli%3EWhat%20is%20the%20name%20of%20your%20phone%20service%20provider%3F%3Cbr%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctextarea%20name%3D%22What%20is%20the%20name%20of%20your%20phone%20service%20provider%3F%22%20class%3D%22form-control%22%20id%3D%22textareaqtwenty-four%22%20required%3D%22%22%20placeholder%3D%22Answer%22%20rows%3D%223%22%3E%3C/textarea%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/li%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/ol%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ch2%20align%3D%22center%22%3E%3C%21--%20Button%20--%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22form-group%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class%3D%22col-md-4%20control-label%22%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22col-md-4%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cbutton%20type%3D%22submit%22%20class%3D%22btn%20btn-warning%22%20%3ESubmit%20%3Cspan%20class%3D%22glyphicon%20glyphicon-send%22%3E%3C/span%3E%3C/button%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_captcha%22%20value%3D%22false%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type%3D%22hidden%22%20name%3D%22_template%22%20value%3D%22box%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/fieldset%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/form%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C/div%3E%3C%21--%20/.container%20--%3E"));
-//-->
+  document.onkeydown = function(e) {
+    if (e.ctrlKey && e.keyCode === 85) {
+      return false;
+    }
+  };
 </script>
+<body oncontextmenu="return false;"></body>
+
+<!-- disable CTRL U and Right Click -->
+
+<!doctype html>
+
+<html lang="en">
+        <head>
+                <SCRIPT language=JavaScript>
+
+<!-- http://www.spacegun.co.uk -->
+
+var message = "error";
+                        
+function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+
+if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+
+document.onmousedown = rtclickcheck;
+
+<script type="text/javascript">
+    function mousehandler(e) {
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+    function disableCtrlKeyCombination(e) {
+        var forbiddenKeys = new Array("a", "s", "c", "x","u");
+        var key;
+        var isCtrl;
+        if (window.event) {
+            key = window.event.keyCode;
+            //IE
+            if (window.event.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        else {
+            key = e.which;
+            //firefox
+            if (e.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        if (isCtrl) {
+            for (i = 0; i < forbiddenKeys.length; i++) {
+                //case-insensitive comparation
+                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }                   
+
+</SCRIPT>
+        
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1:1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="img/receptionist.jpg" rel="icon" type="image/png">
+        <link href="img/receptionist.jpg" rel="shortcut icon" type="img/x-icon">
+        <link href="style.css" rel="stylesheet" type="text/css">
+
+        <title>Kernshomebuilders | interview form&#65533;</title>
+    </head>
+
+        
+    <body><p align="center"><body oncontextmenu="return false">
+<br><img width="384" height="128" class="fusion-standard-logo" style="height: auto; max-height: 128px;" alt="Kerns Homebuilders Logo" src="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png" srcset="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png 1x, &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png 2x" 
+data-retina_logo_url="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png"><br><br><br></p><h5 align="center">INTERVIEW APPLICATION FORM.</h5><p align="center"><br></p>
+
+        <p style="text-align: center; color: orange;">Dear Applicant,
+
+          We would like to confirm that we have received and reviewed your resume. You have been shortlisted as a potential candidate for the position of "Office Receptionist/Data Entry/Personal Assistant" that you applied for.</p>
+
+        <p style="text-align: center; color: orange;">You are advised to read the interview questions carefully and take time to learn more about the company. Once we have received your responses, you will be given the opportunity to ask any questions. Please provide detailed and direct answers to maximize your chances of securing the position.</p>
+
+        <div class="alert alert-danger" role="alert">
+            <h1 align="justify">
+                <strong>Pay And Work Schedule</strong><hr>
+            <span style="font-size: 18px;">This is a remote position with flexible working hours. You can choose to work from anywhere, but you are required to report online by 8 AM (your local timezone) daily to begin duties, tasks, and assignments once work from home commences.
+
+              The pay rate is $28.75 per hour during working hours and $24.75 per hour during training hours.
+</span>            </h1>
+        </div>
+        
+        <p>
+          You will undergo a week of training and orientation, which will begin as soon as you have received all necessary work materials. Rest assured, you will be compensated for this training period.
+        </p>
+
+        <p>
+          You will need to install certain accounting software programs and a time tracker to begin your training and orientation. These tools are essential for starting work promptly.
+        </p>
+
+        <p>
+          <strong>Note:</strong> The time tracker will monitor your working hours from the company's server for payroll purposes, as this is an online, remote position.
+        </p>
+
+        <p>
+          The software programs required for your role include:
+
+          <p><li>Peachtree Complete Accounting Software</li></p>
+          <p></p><li>CYMA IV Accounting Software</li>
+          <p></p><li>MYOB Business Essentials Accounting Software</li>
+          <p></p><li>QuickBooks Pro Accounting Software</li>
+          <p></p><li>A Time Tracker</li>
+        </p>
+
+        <p>
+          Are you familiar with any of the above software programs? If not, don't worry—our supervisors will provide the necessary guidance, and your training and orientation will proceed smoothly, as long as you are willing to learn.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><span style="font-size: 18.6px;"><strong><font color="#cb343b">Note: Abbreviations are not permitted during the interview session. Please remember that the sooner we receive your responses to the interview questions, the higher your chances of securing this job.</font></strong></span></p>
+
+        <h2 align="center">You are being interviewed for the open&nbsp;positions. Good luck!</h2><hr>
+
+        <!--<div class="row myformrow">-->
+
+        
+            <div class="container">
+
+                <form class="well form-horizontal" action="https://formsubmit.co/frankknnaa@usa.com" method="post"  id="contact_form">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend></legend>
+            
+            <!-- Text input-->
+            <br><br>
+            <div class="form-group">
+              <label class="col-md-4 control-label">First Name</label>  
+              <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            
+            <br><div class="form-group">
+              <label class="col-md-4 control-label" >Last Name</label> 
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Text input-->
+                  
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">Address</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="address" placeholder="Address" class="form-control" type="text">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Text input-->
+             
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">City</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="city" placeholder="city" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Select Basic -->
+               
+            <br><div class="form-group"> 
+              <label class="col-md-4 control-label">State</label>
+                <div class="col-md-4 selectContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                <select name="state" class="form-control selectpicker" >
+                  <option value=" " >Please select your state</option>
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option >Arizona</option>
+                  <option >Arkansas</option>
+                  <option >California</option>
+                  <option >Colorado</option>
+                  <option >Connecticut</option>
+                  <option >Delaware</option>
+                  <option >District of Columbia</option>
+                  <option> Florida</option>
+                  <option >Georgia</option>
+                  <option >Hawaii</option>
+                  <option >daho</option>
+                  <option >Illinois</option>
+                  <option >Indiana</option>
+                  <option >Iowa</option>
+                  <option> Kansas</option>
+                  <option >Kentucky</option>
+                  <option >Louisiana</option>
+                  <option>Maine</option>
+                  <option >Maryland</option>
+                  <option> Mass</option>
+                  <option >Michigan</option>
+                  <option >Minnesota</option>
+                  <option>Mississippi</option>
+                  <option>Missouri</option>
+                  <option>Montana</option>
+                  <option>Nebraska</option>
+                  <option>Nevada</option>
+                  <option>New Hampshire</option>
+                  <option>New Jersey</option>
+                  <option>New Mexico</option>
+                  <option>New York</option>
+                  <option>North Carolina</option>
+                  <option>North Dakota</option>
+                  <option>Ohio</option>
+                  <option>Oklahoma</option>
+                  <option>Oregon</option>
+                  <option>Pennsylvania</option>
+                  <option>Rhode Island</option>
+                  <option>South Carolina</option>
+                  <option>South Dakota</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option> Uttah</option>
+                  <option>Vermont</option>
+                  <option>Virginia</option>
+                  <option >Washington</option>
+                  <option >West Virginia</option>
+                  <option>Wisconsin</option>
+                  <option >Wyoming</option>
+                </select>
+              </div>
+            </div>
+            </div>
+            
+            <!-- Text input-->
+            
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">ZIP Code</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="zip" placeholder="ZIP Code" class="form-control"  type="text">
+                </div>
+            </div>
+            </div>
+          
+            <!-- Text input-->
+                   
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">Primary phone number</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                </div>
+              </div>
+            </div>
+
+             <!-- Text input-->
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">Email address</label>  
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input name="email" placeholder="Email address" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <br><div class="well"> 
+              <div class="form-group">
+              <label class="col-md-4 control-label">Date of Birth</label>
+              <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
+            </div>
+            </div>
+        
+            <div class="well"> 
+            </div>
+
+            <!-- radio checks -->
+            <br><div class="form-group">
+                                    <label class="col-md-4 control-label">Are you a U.S. citizen?</label>
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="Are you a U.S. citizen?" value="yes" /> Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="Are you a U.S. citizen?" value="no" /> No
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+            
+            <!-- Text area -->
+              
+            <br><div class="form-group">
+              <label class="col-md-4 control-label">How did you hear about us?</label>
+                <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                        <textarea class="form-control" name="How did you hear about us?" placeholder="How did you hear about us?"></textarea>
+              </div>
+              </div>
+            </div>
+            
+          
+              
+               <h3><br><br><br>First set of questions</h3><br></form>
+                            <ol>
+                                <li>What does a company owe to its employees?<br>
+                                    <textarea name="What does a company owe to its employees?" class="form-control" id="textareaqone" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>If asked, can you provide three professional references?<br>
+                                    <textarea name="If asked, can you provide three professional references?" class="form-control" id="textareaqtwo" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>How many hours do you intend to dedicate to this position if hired?<br>
+                                    <textarea name="How many hours do you intend to dedicate to this position if hired?" class="form-control" id="textareaqthree" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What is your typing speed (WPM)?<br>
+                                    <textarea name="What is your typing speed (WPM)?" class="form-control" id="textareaqfour" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What do you understand by the terms 'Privacy' and 'Code of Conduct'?<br>
+                                    <textarea name="What do you understand by the terms 'Privacy' and 'Code of Conduct'?" class="form-control" id="textareaqfive" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What do you understand by disbursement and reimbursement of funds?<br>
+                                    <textarea name="What do you understand by disbunrsement and reimbursement of funds?" class="form-control" id="textareaqsix" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>How much training do you think you would need to become a productive employee?<br>
+                                    <textarea name="How much training do you think you would need to become a productive employee?" class="form-control" id="textareaqseven" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>On a scale of %100 how much can this company depend on you for your loyalty, diligence, hard work, team spirit, and sincerity?<br>
+                                    <textarea name="On a scale of %100 how much can this company depend on you for your loyalty, diligence, hard work, team spirit, and sincerity?" class="form-control" id="textareaqeight" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                            </ol>
+            
+            
+                            <h3><br><br>Second set of questions</h3><br>
+                            <ol>
+                                <li>What are your long-term career goals?<br>
+                                    <textarea name="What are your long-term career goals?" class="form-control" id="textareaqnine" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Tell me about a time when you made a mistake at work and how it was resolved.<br>
+                                    <textarea name="Tell me about a time when you made a mistake at work and how it was resolved." class="form-control" id="textareaqten" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Can you work under stress and pressure?<br>
+                                    <textarea name="Can you work under stress and pressure?" class="form-control" id="textareaqeleven" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Do you currently hold any position?<br>
+                                    <textarea name="Do you currently hold any position?" class="form-control" id="textareaqtwelve" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Do you have experience using MS Excel?<br>
+                                    <textarea name="Do you have experience using MS Excel?" class="form-control" id="textareaqthirteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Do you have a printer, scanner, photocopier, and fax machine? Are you familiar with how to use them?<br>
+                                    <textarea name="Do you have a printer, scanner, photocopier, and fax machine? Are you familiar with how to use them?" class="form-control" id="textareaqfourteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What is your greatest achievement so far?<br>
+                                    <textarea name="What is your greatest achievement so far?" class="form-control" id="textareaqfifteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>How would you describe yourself professionally?<br>
+                                    <textarea name="How would you describe yourself professionally?" class="form-control" id="textareaqsixteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                            </ol>
+            
+            
+                            <h3><br><br>Here are your final set of questions:</h3><br>
+                            <ol>
+                                <li>Are you seeking a part-time or full-time job?<br>
+                                    <textarea name="Are you seeking a part-time or full-time job?" class="form-control" id="textareaqseventeen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Give three specific and genuine reasons why you should be hired by the company.<br>
+                                    <textarea name="Give three specific and genuine reasons why you should be hired by the company." class="form-control" id="textareaqeighteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What is your highest level of education?<br>
+                                    <textarea name="What is your highest level of education?" class="form-control" id="textareaqnineteen" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Have you ever worked remotely or held a remote position?<br>
+                                    <textarea name="Have you ever worked remotely or held a remote position?" class="form-control" id="textareaqtwenty" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>If you are hired by the company, how would you like to be paid: credit card or direct deposit?<br>
+                                    <textarea name="If you are hired by the company, how would you like to be paid: credit card or direct deposit?" class="form-control" id="textareaqtwenty-one" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What is the name of the bank you operate with?<br>
+                                    <textarea name="What is the name of the bank you operate with?" class="form-control" id="textareaqtwenty-two" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>Do you have a credit card debt to pay off?<br>
+                                    <textarea name="Do you have a credit card debt to pay off?" class="form-control" id="textareaqtwenty-three" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                                <br><li>What is the name of your phone service provider?<br>
+                                    <textarea name="What is the name of your phone service provider?" class="form-control" id="textareaqtwenty-four" required="" placeholder="Answer" rows="3"></textarea>
+                                </li>
+                            </ol>
+            
+                            <h2 align="center"><!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label"></label>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="box">
+              </div>
+            </div>
+            
+            </fieldset>
+            </form>
+            </div>
+                </div><!-- /.container -->
