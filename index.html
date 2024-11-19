@@ -32,47 +32,7 @@ document.onmousedown = rtclickcheck;
 
         
     <body><p align="center"><body oncontextmenu="return false">
-        <script type="text/javascript">
-    function mousehandler(e) {
-        var myevent = (isNS) ? e : event;
-        var eventbutton = (isNS) ? myevent.which : myevent.button;
-        if ((eventbutton == 2) || (eventbutton == 3)) return false;
-    }
-    document.oncontextmenu = mischandler;
-    document.onmousedown = mousehandler;
-    document.onmouseup = mousehandler;
-    function disableCtrlKeyCombination(e) {
-        var forbiddenKeys = new Array("a", "s", "c", "x","u");
-        var key;
-        var isCtrl;
-        if (window.event) {
-            key = window.event.keyCode;
-            //IE
-            if (window.event.ctrlKey)
-                isCtrl = true;
-            else
-                isCtrl = false;
-        }
-        else {
-            key = e.which;
-            //firefox
-            if (e.ctrlKey)
-                isCtrl = true;
-            else
-                isCtrl = false;
-        }
-        if (isCtrl) {
-            for (i = 0; i < forbiddenKeys.length; i++) {
-                //case-insensitive comparation
-                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-</script>
-<img width="384" height="128" class="fusion-standard-logo" style="height: auto; max-height: 128px;" alt="Kerns Homebuilders Logo" src="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png" srcset="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png 1x, &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png 2x" 
+<br><img width="384" height="128" class="fusion-standard-logo" style="height: auto; max-height: 128px;" alt="Kerns Homebuilders Logo" src="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png" srcset="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-standard.png 1x, &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png 2x" 
 data-retina_logo_url="https://kernshomebuilders.com/wp-content/uploads/2024/04/kerns-primary-80year-retina.png"><br><br><br></p><h5 align="center">INTERVIEW APPLICATION FORM.</h5><p align="center"><br></p>
 
         <p style="text-align: center; color: orange;">Dear Applicant,
